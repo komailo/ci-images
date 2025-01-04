@@ -53,5 +53,6 @@ RUN apk add --no-cache \
     jq=${JQ_VERSION} \
     openssh=${OPENSSH_VERSION}
 
+
 COPY --from=terraform /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=trivy /usr/local/bin/trivy /usr/local/bin/trivy
