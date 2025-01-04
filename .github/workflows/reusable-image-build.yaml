@@ -123,7 +123,7 @@ jobs:
 
       - name: Generate artifact attestation
         if: env.build_required && env.docker_push
-        uses: actions/attest-build-provenance@v1
+        uses: actions/attest-build-provenance@v2
         id: attest
         with:
           subject-name: ghcr.io/${{ github.repository }}/${{ inputs.image_group }}/${{ matrix.image_type }}
