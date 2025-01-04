@@ -1,11 +1,11 @@
-ARG ALPINE_VERSION=3.20.0
-ARG ANSIBLE_LINT_VERSION=24.5.0-r0
-ARG ANSIBLE_VERSION=9.5.1-r0
-ARG BASH_VERSION=5.2.26-r0
+ARG ALPINE_VERSION=3.21.0
+ARG ANSIBLE_LINT_VERSION=24.10.0-r0
+ARG ANSIBLE_VERSION=11.1.0-r0
+ARG BASH_VERSION=5.2.37-r0
 ARG GITLAB_RUNNER_IMAGE_TAG=alpine-v16.1.0
 ARG GITLAB_RUNNER_IMAGE_TYPE=gitlab-runner
 ARG JQ_VERSION=1.7.1-r0
-ARG OPENSSH_VERSION=9.7_p1-r3
+ARG OPENSSH_VERSION=9.9_p1-r2
 ARG TF_VERSION=1.7.5
 ARG TRIVY_VERSION=0.51.4
 
@@ -52,6 +52,7 @@ RUN apk add --no-cache \
     bash=${BASH_VERSION} \
     jq=${JQ_VERSION} \
     openssh=${OPENSSH_VERSION}
+
 
 COPY --from=terraform /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=trivy /usr/local/bin/trivy /usr/local/bin/trivy
