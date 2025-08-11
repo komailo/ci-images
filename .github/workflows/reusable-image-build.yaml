@@ -29,7 +29,7 @@ jobs:
           echo "image_type=$image_type_json" >> $GITHUB_OUTPUT
         env:
           image_type: ${{ inputs.image_type }}
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3
         id: changes
         with:
@@ -59,7 +59,7 @@ jobs:
       - name: Checkout Code
         if: env.build_required
         id: checkout_code
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 0
       - name: Set up QEMU
